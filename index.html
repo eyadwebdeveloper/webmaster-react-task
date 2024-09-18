@@ -9,12 +9,12 @@
     <link rel="icon" type="image/x-icon" href="imgs/favicon.jpg">
 
     <!-- 
-    =============================================================================================
-    Note: I got images from freepik.com so photos are not the same as provided image in the email.
+    ========================================================================================================================
+    Note: I got images from freepik.com so photos are not the same as provided image in the email, and I made it responsive!
     Task By:
       - Eyad Ashraf
       - eyad6ashraf@gmail.com
-    =============================================================================================
+    =========================
      -->
 
     <link rel="stylesheet" href="styles.css">
@@ -28,8 +28,10 @@
                 <div className={`card ${props.sold ? 'sold' : ''}`}>
                     <img src={props.image} alt="pizza" />
                     <div className="card-content">
-                        <h3>{props.name}</h3>
-                        <h4>{props.description}</h4>
+                        <div className="text">
+                            <h3>{props.name}</h3>
+                            <h4>{props.description}</h4>
+                        </div>
                         <h5>{props.price}</h5>
                     </div>
                 </div>
