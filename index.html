@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.jpg">
+
+    <!-- 
+    =============================================================================================
+    Note: I got images from freepik.com so photos are not the same as provided image in the email.
+    Task By:
+      - Eyad Ashraf
+      - eyad6ashraf@gmail.com
+    =============================================================================================
+     -->
+
+    <link rel="stylesheet" href="styles.css">
+    <title>React JS task</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const PizzaCard = (props) => {
+            return (
+                <div className={`card ${props.sold ? 'sold' : ''}`}>
+                    <img src={props.image} alt="pizza" />
+                    <div className="card-content">
+                        <h3>{props.name}</h3>
+                        <h4>{props.description}</h4>
+                        <h5>{props.price}</h5>
+                    </div>
+                </div>
+            );
+        };
+
+        const element = (
+            <div className="container">
+                <div className="title">
+                    <hr />
+                    <h1>Fast React Pizza</h1>
+                    <hr />
+                </div>
+                <h2>Our Menu</h2>
+                <p className="centered-title">
+                    Best Pizza restaurant ever !! <br />
+                    Cairo, Egypt
+                </p>
+                <div className="cards">
+                    <div className="row">
+                        <PizzaCard
+                            name="Focaccia"
+                            description="Bread with italian olive oil and rosemary"
+                            price="6"
+                            image="./imgs/pizza-1.png"
+                        />
+                        <PizzaCard
+                            name="Pizza Margherita"
+                            description="Tomato and mozarella"
+                            price="10"
+                            image="./imgs/pizza-2.png"
+                        />
+                    </div>
+                    <div className="row">
+                        <PizzaCard
+                            name="Pizza Spinaci"
+                            description="Tomato, mozerla, spinach and ricotta cheese"
+                            price="6"
+                            image="./imgs/pizza-3.png"
+                        />
+                        <PizzaCard
+                            name="Pizza Funghi"
+                            description="Tomato, mozarella, mushrooms and onion"
+                            price="12"
+                            image="./imgs/pizza-4.png"
+                        />
+                    </div>
+                    <div className="row">
+                        <PizzaCard
+                            name="Pizza Salamanio"
+                            description="Tomato, mozarella and pepperoni"
+                            price="Sold out"
+                            image="./imgs/pizza-5.png"
+                            sold={true}
+                        />
+                        <PizzaCard
+                            name="Pizza Prosciutto"
+                            description="Tomato, mazarela, ham, aragula and puratta cheese"
+                            price="18"
+                            image="./imgs/pizza-6.png"
+                        />
+                    </div>
+                </div>
+                <p className="centered-title">We are open until 22:00</p>
+                <button className="order-btn">Order</button>
+                <footer></footer>
+            </div>
+        );
+        ReactDOM.render(element, document.getElementById('app'));
+    </script>
+</body>
+</html>
